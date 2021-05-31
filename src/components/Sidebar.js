@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { links } from '../utils/constants';
 import styled from 'styled-components';
 
 const Sidebar = () => {
-  let location = useLocation();
-  let history = useHistory();
+  // let location = useLocation();
+  // let history = useHistory();
 
   // console.log(location);
   // console.log(history);

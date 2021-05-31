@@ -20,6 +20,10 @@ const Wrapper = styled.section`
   color: #fff;
   margin-top: 5rem;
 
+  h1 {
+    margin-bottom: 16px;
+  }
+
   @media (max-width: 600px) {
     width: 350px;
     h1 {

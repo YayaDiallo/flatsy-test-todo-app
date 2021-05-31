@@ -28,18 +28,22 @@ const CompletedTasks = () => {
     <Wrapper>
       <h3>Completed - {arrCompletedTasks.length}</h3>
       <ul>
-        {arrCompletedTasks.map((task) => (
-          <li key={task.id}>
-            <RiCheckboxBlankCircleFill
-              onClick={() => handleUnComplete(task.id)}
-            />
-            {task.taskValue}
-            <RiCloseCircleFill
-              className='delete'
-              onClick={() => handleDelete(task.id)}
-            />
-          </li>
-        ))}
+        {arrCompletedTasks < 1 ? (
+          <p>You have no completed tasks</p>
+        ) : (
+          arrCompletedTasks.map((task) => (
+            <li key={task.id}>
+              <RiCheckboxBlankCircleFill
+                onClick={() => handleUnComplete(task.id)}
+              />
+              {task.taskValue}
+              <RiCloseCircleFill
+                className='delete'
+                onClick={() => handleDelete(task.id)}
+              />
+            </li>
+          ))
+        )}
       </ul>
     </Wrapper>
   );
@@ -48,6 +52,15 @@ const CompletedTasks = () => {
 const Wrapper = styled.div`
   h3 {
     margin: 1.5rem 0;
+  }
+
+  p {
+    text-align: center;
+    font-size: 18px;
+    padding: 6px;
+    background: #65bcb7;
+    border: 1px solid #25252f;
+    border-radius: 5px;
   }
 
   li {

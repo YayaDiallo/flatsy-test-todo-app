@@ -21,14 +21,18 @@ const Tasks = () => {
     <Wrapper>
       <h3>Task - {uncompletedTasks.length}</h3>
       <ul>
-        {uncompletedTasks.map((task) => (
-          <li key={task.id}>
-            <RiCheckboxBlankCircleLine
-              onClick={() => handleComplete(task.id)}
-            />
-            {task.taskValue}
-          </li>
-        ))}
+        {uncompletedTasks < 1 ? (
+          <p>You have no tasks to do</p>
+        ) : (
+          uncompletedTasks.map((task) => (
+            <li key={task.id}>
+              <RiCheckboxBlankCircleLine
+                onClick={() => handleComplete(task.id)}
+              />
+              {task.taskValue}
+            </li>
+          ))
+        )}
       </ul>
     </Wrapper>
   );
@@ -37,6 +41,15 @@ const Tasks = () => {
 const Wrapper = styled.div`
   h3 {
     margin: 1.5rem 0;
+  }
+
+  p {
+    font-size: 18px;
+    text-align: center;
+    padding: 6px;
+    background: #65bcb7;
+    border: 1px solid #25252f;
+    border-radius: 5px;
   }
 
   li {

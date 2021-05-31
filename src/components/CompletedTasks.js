@@ -88,7 +88,7 @@ const Wrapper = styled.div`
     &:hover {
       .delete {
         display: inline;
-        margin-right: 0;
+        margin-left: 10px;
         color: #fc6b97;
         cursor: pointer;
         font-size: 1.2rem;

@@ -33,6 +33,10 @@ const AddTask = () => {
 
 const FormGroup = styled.div`
   width: 100%;
+  @media (max-width: 600px) {
+    width: 260px;
+    margin-left: 70px;
+  }
   svg {
     position: absolute;
     color: #fc6b97;

@@ -55,6 +55,14 @@ const Wrapper = styled.div`
       cursor: pointer;
     }
   }
+
+  @media (max-width: 600px) {
+    width: 260px;
+    margin-left: 70px;
+    li {
+      width: 260px;
+    }
+  }
 `;
 
 export default Tasks;

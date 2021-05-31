@@ -18,6 +18,7 @@ const initialState = {
 // Create context
 const TaskContext = React.createContext();
 
+// Task Provider
 export const TaskProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -50,6 +51,7 @@ export const TaskProvider = ({ children }) => {
   );
 };
 
+// Use TaskContext
 export const useTaskContext = () => {
   return useContext(TaskContext);
 };

@@ -4,7 +4,9 @@ import { RiCheckboxBlankCircleLine } from 'react-icons/ri';
 import { useTaskContext } from '../context/task_context';
 
 const Tasks = () => {
+  // Use task_context
   const { tasks, completeTask } = useTaskContext();
+
   const [uncompletedTasks, setUncompletedTasks] = useState([]);
 
   useEffect(() => {
@@ -12,6 +14,7 @@ const Tasks = () => {
     setUncompletedTasks(tasksCompleted);
   }, [tasks]);
 
+  // Task completed
   const handleComplete = (id) => {
     const findTask = tasks.find((task) => task.id === id);
     completeTask(findTask);

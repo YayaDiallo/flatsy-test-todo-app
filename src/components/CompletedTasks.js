@@ -4,6 +4,7 @@ import { RiCheckboxBlankCircleFill, RiCloseCircleFill } from 'react-icons/ri';
 import { useTaskContext } from '../context/task_context';
 
 const CompletedTasks = () => {
+  // Use task_context
   const { tasks, uncompleteTask, deleteTask } = useTaskContext();
 
   const [arrCompletedTasks, setArrCompletedTasks] = useState([]);
@@ -13,11 +14,13 @@ const CompletedTasks = () => {
     setArrCompletedTasks(tasksCompleted);
   }, [tasks]);
 
+  // Task not performed
   const handleUnComplete = (id) => {
     const findTask = tasks.find((task) => task.id === id);
     uncompleteTask(findTask);
   };
 
+  // Delete taks permanently
   const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete?')) {
       deleteTask(id);

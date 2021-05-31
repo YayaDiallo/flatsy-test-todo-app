@@ -6,15 +6,18 @@ import CompletedTasks from './CompletedTasks';
 import { useTaskContext } from '../context/task_context';
 
 const AddTask = () => {
+  // Use task_context
   const { addTask, tasks, errorMsg } = useTaskContext();
 
   const [taskValue, setTaskValue] = useState('');
 
+  // Add task
   const handleClick = () => {
     addTask(taskValue);
     setTaskValue('');
   };
 
+  // Add a task via keyboard
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleClick();

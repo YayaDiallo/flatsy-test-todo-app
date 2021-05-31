@@ -14,6 +14,12 @@ const AddTask = () => {
     setTaskValue('');
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleClick();
+    }
+  };
+
   return (
     <>
       <FormGroup>
@@ -23,6 +29,7 @@ const AddTask = () => {
           value={taskValue}
           onChange={(e) => setTaskValue(e.target.value)}
           placeholder='Add a task ...'
+          onKeyPress={(e) => handleKeyPress(e)}
         />
       </FormGroup>
       <Tasks tasks={tasks} />

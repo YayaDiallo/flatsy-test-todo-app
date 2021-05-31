@@ -6,7 +6,8 @@ import CompletedTasks from './CompletedTasks';
 import { useTaskContext } from '../context/task_context';
 
 const AddTask = () => {
-  const { addTask, tasks } = useTaskContext();
+  const { addTask, tasks, errorMsg } = useTaskContext();
+
   const [taskValue, setTaskValue] = useState('');
 
   const handleClick = () => {
@@ -31,6 +32,9 @@ const AddTask = () => {
           placeholder='Add a task ...'
           onKeyPress={(e) => handleKeyPress(e)}
         />
+        <p style={{ display: errorMsg !== '' ? 'block' : 'none' }}>
+          {errorMsg}
+        </p>
       </FormGroup>
       <Tasks tasks={tasks} />
       <CompletedTasks tasks={tasks} />
@@ -44,6 +48,16 @@ const FormGroup = styled.div`
     width: 260px;
     margin-left: 70px;
   }
+
+  p {
+    font-size: 18px;
+    text-align: center;
+    padding: 6px;
+    background: #ff7675;
+    border: 1px solid #25252f;
+    border-radius: 5px;
+  }
+
   svg {
     position: absolute;
     color: #fc6b97;

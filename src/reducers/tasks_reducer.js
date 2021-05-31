@@ -9,11 +9,10 @@ import { v4 as uuidv4 } from 'uuid';
 const task_reducer = (state, action) => {
   if (action.type === ADD_TASK) {
     const taskValue = action.payload;
-    console.log(taskValue);
     const isExist = state.tasks.find((task) => task.taskValue === taskValue);
 
-    if (isExist || taskValue.toLowerCase().trim() === '') {
-      return state;
+    if (isExist || taskValue.trim() === '') {
+      return { ...state, errorMsg: 'Please enter a valid task' };
     }
 
     const newTask = {
@@ -22,7 +21,7 @@ const task_reducer = (state, action) => {
       completed: false,
     };
 
-    return { ...state, tasks: [...state.tasks, newTask] };
+    return { ...state, tasks: [...state.tasks, newTask], errorMsg: '' };
   }
 
   if (action.type === COMPLETE_TASK) {

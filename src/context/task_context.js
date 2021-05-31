@@ -12,6 +12,7 @@ const initialState = {
   tasks: [],
   completedTasks: [],
   uncompletedTasks: [],
+  errorMsg: '',
 };
 
 // Create context

@@ -7,15 +7,15 @@ const Sidebar = () => {
   let location = useLocation();
   let history = useHistory();
 
-  console.log(location);
-  console.log(history);
+  // console.log(location);
+  // console.log(history);
 
-  const isActive = location.pathname;
-  if (isActive) {
-    console.log('is' + isActive);
-  }
+  // const isActive = location.pathname;
+  // if (isActive) {
+  //   console.log('is' + isActive);
+  // }
 
-  console.log(isActive === false);
+  // console.log(isActive === false);
 
   return (
     <section className='sidebar'>

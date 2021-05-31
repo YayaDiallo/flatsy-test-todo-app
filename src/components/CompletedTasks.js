@@ -80,10 +80,19 @@ const Wrapper = styled.div`
       color: #fc6b97;
       cursor: pointer;
     }
+
     .delete {
-      margin-right: 0px;
-      color: #fc6b97;
-      cursor: pointer;
+      display: none;
+    }
+
+    &:hover {
+      .delete {
+        display: inline;
+        margin-right: 0;
+        color: #fc6b97;
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
     }
   }
 
